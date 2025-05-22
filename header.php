@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php require_once "config/connexion.php";?>
+ 
+ <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head>
     <meta charset="utf-8">
@@ -177,7 +179,19 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="dashboard.php">UCAR-VIE</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="dashboard.php">UCAR-VIE
+ <?php 
+ $query = $con->prepare("SELECT * from employe WHERE id = 1");
+ $query->execute();
+ $data = $query->fetchAll(PDO::FETCH_ASSOC);
+ foreach($data as $row ){
+  echo $row['telephone'];
+ }
+ 
+ ?>
+  
+
+  </a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -228,7 +242,7 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="etudiant.php">
                 <svg class="bi" aria-hidden="true"><use xlink:href="#people"/></svg>
-                Gestion Etudiant
+                Gestion Etudiants
               </a>
             </li>
           </ul>
