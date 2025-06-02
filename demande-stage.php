@@ -9,10 +9,10 @@
   <header>
     <h1>UCAR-VIE</h1>
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="demande-stage.html">Demande de stage</a>
+      <a href="index.php">Accueil</a>
+      <a href="about.php">À propos</a>
+      <a href="contact.php">Contact</a>
+      <a href="demande-stage.php">Demande de stage</a>
     </nav>
   </header>
 

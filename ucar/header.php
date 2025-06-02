@@ -1,4 +1,4 @@
-<?php require_once "config/connexion.php";?>
+<?php require_once "../config/connexion.php";?>
  
  <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
@@ -9,19 +9,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.145.0">
     <title>Developpement informatique</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
-
-    <script src="js/color-modes.js"></script>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="../assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="../assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="../assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="mask-icon" href="../assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="../assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
 
 
     <style>
@@ -109,7 +100,7 @@
     </style>
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -179,19 +170,7 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="dashboard.php">UCAR-VIE
- <?php 
- $query = $con->prepare("SELECT * from employe WHERE id = 1");
- $query->execute();
- $data = $query->fetchAll(PDO::FETCH_ASSOC);
- foreach($data as $row ){
-  echo $row['telephone'];
- }
- 
- ?>
-  
-
-  </a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="dashboard.php">UCAR-VIE</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -228,22 +207,29 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="employe.php">
+              <a class="nav-link d-flex align-items-center gap-2" href="demande.php">
                 <svg class="bi" aria-hidden="true"><use xlink:href="#file-earmark"/></svg>
-                Gestion Employe
+                Gestion de demandes
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="encadreur.php">
+              <a class="nav-link d-flex align-items-center gap-2" href="stage.php">
               <svg class="bi" aria-hidden="true"><use xlink:href="#file-earmark-text"/></svg>
-                Gestion Encadreur
+                Gestion de Stages
+              </a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="tuteur.php">
+              <svg class="bi" aria-hidden="true"><use xlink:href="#file-earmark-text"/></svg>
+                Gestion de Tuteurs
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="etudiant.php">
                 <svg class="bi" aria-hidden="true"><use xlink:href="#people"/></svg>
-                Gestion Etudiants
-              </a>
+                Gestion des etudiants
+                </a>
             </li>
           </ul>
 
