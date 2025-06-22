@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Demande de stage - UCAR-VIE</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>UCAR-VIE</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="demande-stage.html">Demande de stage</a>
-    </nav>
-  </header>
-
+<?php require_once("header.php"); ?>
   <main>
     <h2>Formulaire de demande de stage</h2>
     <form action="#" method="post">
@@ -35,8 +18,4 @@
     </form>
   </main>
 
-  <footer>
-    <p>&copy; 2025 UCAR-VIE</p>
-  </footer>
-</body>
-</html>
+  <?php require_once("footer.php"); ?>

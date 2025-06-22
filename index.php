@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UCAR-VIE - Accueil</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>UCAR-VIE</h1>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="apropos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="demande-stage.html">Demande de stage</a>
-    </nav>
-  </header>
-
+<?php require_once("header.php"); ?>
   <main>
     <section>
       <h2>Bienvenue chez UCAR-VIE</h2>
       <p>UCAR-VIE est une organisation dédiée à la jeunesse, au développement durable et à la valorisation des talents.</p>
     </section>
   </main>
+<?php require_once("footer.php"); ?>
 
-  <footer>
-    <p>&copy; 2025 UCAR-VIE. Tous droits réservés.</p>
-  </footer>
-</body>
-</html>
+  
