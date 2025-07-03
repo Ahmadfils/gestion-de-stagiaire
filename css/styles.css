@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  background: #f8f9fa;
 }
 
 .form-signin {
@@ -22,4 +23,23 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.sidebar {
+  min-height: 100vh;
+  background: #212529;
+}
+
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+  background: #343a40;
+  color: #fff;
+}
+
+.table thead th {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pagination {
+  justify-content: center;
 }
