@@ -1,60 +1,3 @@
-/* globals Chart:false */
-
-(() => {
-  'use strict'
-
-  // Graphs
-  const ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      plugins: {
-        legend: {
-          display: false
-        },
-        tooltip: {
-          boxPadding: 3
-        }
-      }
-    }
-  })
-})()
-
-// Données mockées pour la démonstration
-const demandes = Array.from({length: 37}, (_, i) => ({
-    id: i + 1,
-    nom: `Demandeur ${i + 1}`,
-    date: `2024-06-${(i % 30 + 1).toString().padStart(2, '0')}`
-}));
-
 document.addEventListener('DOMContentLoaded', () => {
     const table = document.getElementById('dataTable');
     if (!table) return;
@@ -75,11 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const ths = Array.from(table.querySelectorAll('thead th'));
         for (let i = 0; i < ths.length; i++) {
             const txt = ths[i].textContent.trim().toLowerCase();
-            if (key === 'id' && txt.includes('id')) return i;
+            if ((key === 'id_etudiant' || key === 'id_demande' || key === 'id_stage' || key === 'id_tuteur' || key === 'id_utilisateur') && txt.includes('id')) return i;
             if (key === 'nom' && txt.includes('nom')) return i;
+            if (key === 'prenom' && txt.includes('prénom')) return i;
             if (key === 'email' && txt.includes('email')) return i;
-            if (key === 'date' && txt.includes('date')) return i;
+            if (key === 'telephone' && txt.includes('téléphone')) return i;
+            if (key === 'etablissement' && txt.includes('établissement')) return i;
+            if (key === 'filiere' && txt.includes('filière')) return i;
             if (key === 'titre' && txt.includes('titre')) return i;
+            if (key === 'date' && txt.includes('date')) return i;
             if (key === 'role' && txt.includes('rôle')) return i;
         }
         return 0;
@@ -97,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return rows.slice().sort((a, b) => {
             const aVal = a.children[idx].textContent.trim().toLowerCase();
             const bVal = b.children[idx].textContent.trim().toLowerCase();
-            if (key === 'id') {
+            if (['id_etudiant', 'id_demande', 'id_stage', 'id_tuteur', 'id_utilisateur'].includes(key)) {
                 return asc ? (parseInt(aVal) - parseInt(bVal)) : (parseInt(bVal) - parseInt(aVal));
             }
             return asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
@@ -120,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderPagination(totalPages) {
         pagination.innerHTML = '';
+        if (totalPages <= 1) return;
         for (let i = 1; i <= totalPages; i++) {
             const li = document.createElement('li');
             li.className = 'page-item' + (i === currentPage ? ' active' : '');
@@ -144,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage = 1;
             renderTable();
         });
-        renderTable();
     }
 
     if (searchInput) {
