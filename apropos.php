@@ -6,5 +6,4 @@
     <p>Téléphone : +257 61 23 45 67</p>
     <p>Adresse : Bujumbura, Burundi</p>
   </main>
-
-<?php require_once("footer.php"); ?>
+  <?php require_once("footer.php"); ?>

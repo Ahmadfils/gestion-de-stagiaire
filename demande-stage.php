@@ -1,3 +1,4 @@
+
 <?php require_once("header.php"); ?>
   <main>
     <h2>Formulaire de demande de stage</h2>
